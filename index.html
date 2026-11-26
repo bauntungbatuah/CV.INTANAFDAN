@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV. INTANAFDAN | Jasa Angkutan & Supplier Bahan Bangunan</title>
     <meta name="description" content="CV. INTANAFDAN menyediakan jasa angkutan material proyek dan pengadaan bahan bangunan lengkap, cepat, dan terpercaya.">
+    <link rel="icon" type="image/png" href="assets/img/logo.cv.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,8 +52,8 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo -->
                 <a href="#beranda" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-xl bg-amber-500 flex items-center justify-center text-navy-950 font-extrabold text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-                        <i class="fa-solid fa-truck-moving"></i>
+                    <div class="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
+                        <img src="assets/img/logo.cv.png" alt="Logo CV. INTANAFDAN" class="w-full h-full object-contain">
                     </div>
                     <div>
                         <span class="text-white font-extrabold text-xl tracking-tight block leading-none">CV. INTANAFDAN</span>
@@ -293,133 +294,4 @@
     <!-- Kalkulator Estimasi & Pemesanan WhatsApp -->
     <section id="kalkulator" class="py-20 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
-                    <div>
-                        <span class="text-amber-600 font-bold text-xs uppercase tracking-wider">Simulasi Biaya Proyek</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Kalkulator Estimasi & Order Cepat</h2>
-                    </div>
-                    <button id="reset-calc-btn" class="text-sm text-slate-500 hover:text-red-600 font-semibold flex items-center gap-1.5 self-start sm:self-center">
-                        <i class="fa-solid fa-rotate-left"></i> Reset Pilihan
-                    </button>
-                </div>
-
-                <div class="grid lg:grid-cols-12 gap-8 mt-8">
-                    <!-- Form Input -->
-                    <div class="lg:col-span-7 space-y-5">
-                        <div>
-                            <label for="calc-material" class="block text-sm font-bold text-navy-900 mb-2">1. Pilih Bahan Bangunan (Opsional jika hanya jasa angkut)</label>
-                            <select id="calc-material" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
-                                <option value="">-- Hanya Jasa Angkutan (Tanpa Beli Material) --</option>
-                            </select>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="calc-qty" class="block text-sm font-bold text-navy-900 mb-2">2. Jumlah / Volume Material</label>
-                                <input type="number" id="calc-qty" min="0" value="1" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
-                            </div>
-                            <div>
-                                <label for="calc-fleet" class="block text-sm font-bold text-navy-900 mb-2">3. Pilih Armada Angkutan</label>
-                                <select id="calc-fleet" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
-                                    <!-- Options injected by JS -->
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="customer-name" class="block text-sm font-bold text-navy-900 mb-2">Nama Pemesan / Proyek</label>
-                                <input type="text" id="customer-name" placeholder="Contoh: Bpk. Ahmad / Proyek Ruko" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500">
-                            </div>
-                            <div>
-                                <label for="customer-address" class="block text-sm font-bold text-navy-900 mb-2">Alamat Tujuan Pengiriman</label>
-                                <input type="text" id="customer-address" placeholder="Kecamatan / Patokan Lokasi" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Summary Panel -->
-                    <div class="lg:col-span-5 bg-navy-900 text-white rounded-2xl p-6 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-amber-400 border-b border-slate-800 pb-3 mb-4">Rincian Estimasi Biaya</h3>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex justify-between">
-                                    <span class="text-slate-400">Item Material:</span>
-                                    <span id="summary-material-name" class="font-semibold text-right">-</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-slate-400">Subtotal Material:</span>
-                                    <span id="summary-material-cost" class="font-semibold">Rp 0</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-slate-400">Armada (<span id="summary-fleet-name">-</span>):</span>
-                                    <span id="summary-fleet-cost" class="font-semibold">Rp 0</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between items-baseline">
-                                <span class="text-slate-300 font-semibold">Estimasi Total:</span>
-                                <span id="summary-total" class="text-2xl font-extrabold text-amber-400">Rp 0</span>
-                            </div>
-                            <p class="text-[11px] text-slate-400 mt-2">*Harga estimasi dapat disesuaikan berdasarkan jarak tempuh akhir dan kondisi bongkar muat.</p>
-                        </div>
-
-                        <button id="whatsapp-order-btn" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-extrabold py-3.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
-                            <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-navy-950 text-slate-400 py-14 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-navy-950 font-extrabold text-lg">
-                            <i class="fa-solid fa-truck-moving"></i>
-                        </div>
-                        <span class="text-white font-extrabold text-lg">CV. INTANAFDAN</span>
-                    </div>
-                    <p class="text-sm leading-relaxed">
-                        Solusi pengadaan bahan bangunan lengkap dan jasa angkutan logistik proyek yang amanah, cepat, dan profesional.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-4">Jam Operasional</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>Senin – Jumat: 07.30 – 17.00 WIB</li>
-                        <li>Sabtu: 07.30 – 15.00 WIB</li>
-                        <li>Minggu / Hari Libur: Sesuai Perjanjian Proyek</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-4">Kontak & Depo Material</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jl. Raya Industri & Konstruksi No. 88</li>
-                        <li><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +62 812-3456-7890</li>
-                        <li><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> admin@cvintanafdan.co.id</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-8 text-center text-xs text-slate-500">
-                &copy; <span id="current-year"></span> CV. INTANAFDAN. Hak Cipta Dilindungi Undang-Undang.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6281234567890?text=Halo%20CV.%20INTANAFDAN,%20saya%20ingin%20bertanya%20mengenai%20bahan%20bangunan%20dan%20jasa%20angkutan." target="_blank" rel="noopener noreferrer" aria-label="Hubungi WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-navy-950 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-110">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Custom JavaScript Terpisah -->
-    <script src="assets/js/app.js"></script>
-</body>
-</html>
+            <div class="bg-slate-50 border border-slate-200 r
