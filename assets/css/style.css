@@ -1,85 +1,249 @@
-/* =========================================================
-   CV. INTANAFDAN - Custom Stylesheet (assets/css/style.css)
-   ========================================================= */
-
+/* ========== VARIABEL WARNA SESUAI LOGO ========== */
 :root {
-    --navy-950: #090d16;
-    --navy-900: #0f172a;
-    --amber-500: #f59e0b;
-    --amber-400: #fbbf24;
+  --biru-utama: #0052CC;
+  --biru-terang: #1E76F0;
+  --biru-gelap: #003D99;
+  --putih: #FFFFFF;
+  --abu-terang: #F5F8FF;
+  --bayangan: rgba(0, 82, 204, 0.15);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
+/* ========== RESET DASAR ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-::-webkit-scrollbar-track {
-    background: #0f172a;
+body {
+  background: linear-gradient(135deg, #E6F0FF 0%, #CCE0FF 50%, #E6F0FF 100%);
+  min-height: 100vh;
+  color: var(--biru-gelap);
 }
 
-::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 5px;
+/* ========== EFEK KACA UTAMA ========== */
+.kaca {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 82, 204, 0.15);
+  box-shadow: 
+    0 8px 32px var(--bayangan),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #f59e0b;
+.kaca-tebal {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px;
+  border: 1px solid rgba(0, 82, 204, 0.2);
+  box-shadow: 
+    0 12px 48px var(--bayangan),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Hero Background Grid Pattern */
-.hero-grid-pattern {
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 40px 40px;
+.kaca-biru {
+  background: rgba(0, 82, 204, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 82, 204, 0.25);
+  box-shadow: 
+    0 6px 24px rgba(0, 82, 204, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* Card Hover Elevation */
-.material-card,
-.fleet-card {
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.25s ease;
+/* ========== NAVBAR KACA ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 40px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 82, 204, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.material-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px -8px rgba(15, 23, 42, 0.12);
-    border-color: var(--amber-500);
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--biru-utama);
+  letter-spacing: 1px;
 }
 
-.fleet-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px -8px rgba(245, 158, 11, 0.15);
-    border-color: var(--amber-400);
-}
-
-/* Active Nav Link Indicator */
 .nav-link {
-    position: relative;
+  display: flex;
+  gap: 32px;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background-color: var(--amber-400);
-    transition: width 0.25s ease;
+.nav-link a {
+  color: var(--biru-gelap);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-link a:hover {
+  color: var(--biru-utama);
 }
 
-/* Filter Button Active State */
-.filter-btn.active {
-    background-color: var(--navy-900);
-    color: #ffffff;
-    border-color: var(--navy-900);
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+.nav-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--biru-utama);
+  transition: width 0.3s ease;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+}
+
+/* ========== TOMBOL KACA ========== */
+.btn-kaca {
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 82, 204, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  color: var(--biru-utama);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-kaca:hover {
+  background: rgba(0, 82, 204, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 82, 204, 0.15);
+}
+
+.btn-kaca-utama {
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--biru-utama), var(--biru-terang));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 82, 204, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-kaca-utama:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.4);
+}
+
+/* ========== KARTU LAYANAN KACA ========== */
+.grid-layanan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.kartu-kaca {
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 82, 204, 0.12);
+  transition: all 0.4s ease;
+}
+
+.kartu-kaca:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 82, 204, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 82, 204, 0.18);
+}
+
+.kartu-kaca h3 {
+  color: var(--biru-utama);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.kartu-kaca p {
+  color: #4466AA;
+  line-height: 1.7;
+}
+
+/* ========== BAGIAN HEADER UTAMA ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 100px;
+}
+
+.hero-kaca {
+  padding: 60px 80px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  border-radius: 28px;
+  border: 1px solid rgba(0, 82, 204, 0.15);
+  box-shadow: 0 16px 56px rgba(0, 82, 204, 0.12);
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: var(--biru-utama);
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #4466AA;
+  max-width: 600px;
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+/* ========== FOOTER KACA ========== */
+.footer-kaca {
+  margin-top: 80px;
+  padding: 40px 60px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 82, 204, 0.1);
+  text-align: center;
+  color: #5577BB;
+}
+
+/* ========== ANIMASI ========== */
+@keyframes melayang {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animasi-layang {
+  animation: melayang 4s ease-in-out infinite;
+}
+
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.muncul {
+  animation: muncul 0.8s ease forwards;
 }
