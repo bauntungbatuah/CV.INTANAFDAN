@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. INTANAFDAN | Jasa Angkutan & Supplier Bahan Bangunan</title>
+    <meta name="description" content="CV. INTANAFDAN menyediakan jasa angkutan material proyek dan pengadaan bahan bangunan lengkap, cepat, dan terpercaya.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN (untuk utilitas responsif cepat) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Terpisah -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-navy-950">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500 flex items-center justify-center text-navy-950 font-extrabold text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-truck-moving"></i>
+                    </div>
+                    <div>
+                        <span class="text-white font-extrabold text-xl tracking-tight block leading-none">CV. INTANAFDAN</span>
+                        <span class="text-amber-400 text-xs font-semibold tracking-wider uppercase">Angkutan & Bahan Bangunan</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#beranda" class="nav-link text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors">Beranda</a>
+                    <a href="#tentang" class="nav-link text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors">Tentang Kami</a>
+                    <a href="#katalog" class="nav-link text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors">Katalog Material</a>
+                    <a href="#armada" class="nav-link text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors">Armada Angkutan</a>
+                    <a href="#kalkulator" class="nav-link text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors">Kalkulator Biaya</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#kalkulator" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-sm px-5 py-2.5 rounded-xl transition-all shadow-md shadow-amber-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator"></i> Hitung Estimasi
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-200 hover:text-amber-400 p-2 rounded-lg focus:outline-none" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-medium">Beranda</a>
+            <a href="#tentang" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-medium">Tentang Kami</a>
+            <a href="#katalog" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-medium">Katalog Material</a>
+            <a href="#armada" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-medium">Armada Angkutan</a>
+            <a href="#kalkulator" class="mobile-nav-link block px-3 py-2.5 rounded-lg bg-amber-500 text-navy-950 font-bold text-center mt-3">Hitung Estimasi & Pesan</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-navy-950 overflow-hidden">
+        <!-- Industrial Grid Pattern Overlay -->
+        <div class="absolute inset-0 hero-grid-pattern opacity-20"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        Mitra Terpercaya Proyek Konstruksi & Logistik
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                        Suplai Bahan Bangunan & <span class="text-amber-400">Jasa Angkutan</span> Satu Pintu.
+                    </h1>
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-2xl">
+                        <strong>CV. INTANAFDAN</strong> siap mendukung kelancaran pembangunan rumah, ruko, hingga proyek infrastruktur dengan material berkualitas SNI dan armada pengiriman tepat waktu langsung ke lokasi proyek Anda.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#katalog" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-7 py-4 rounded-xl transition-all shadow-lg shadow-amber-500/25 flex items-center gap-2.5">
+                            <i class="fa-solid fa-boxes-stacked"></i> Lihat Katalog Material
+                        </a>
+                        <a href="#armada" class="bg-slate-800/80 hover:bg-slate-800 text-white border border-slate-700 font-semibold px-7 py-4 rounded-xl transition-all flex items-center gap-2.5">
+                            <i class="fa-solid fa-truck"></i> Cek Armada Angkutan
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">500+</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Proyek Terlayani</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-amber-400">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Takaran & Kubikasi Pas</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">24/7</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Kesiapan Armada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="absolute -top-4 -right-4 bg-amber-500 text-navy-950 font-extrabold text-xs px-4 py-2 rounded-lg shadow-lg uppercase tracking-wider">
+                            Layanan Terpadu
+                        </div>
+                        <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2.5">
+                            <i class="fa-solid fa-shield-halved text-amber-400"></i> Keunggulan CV. INTANAFDAN
+                        </h2>
+                        <ul class="space-y-5">
+                            <li class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-gem"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-base">Material Langsung dari Sumber</h3>
+                                    <p class="text-slate-400 text-sm mt-1">Pasir cuci, batu split, semen, hingga besi beton standar SNI dengan harga kompetitif.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-truck-ramp-box"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-base">Armada Milik Sendiri</h3>
+                                    <p class="text-slate-400 text-sm mt-1">Tersedia Pick Up, Engkel (CDE), Dump Truck (CDD), hingga Tronton untuk segala medan proyek.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-base">Legalitas Resmi & Transparan</h3>
+                                    <p class="text-slate-400 text-sm mt-1">Melayani pembelian retail perorangan maupun kontrak pengadaan proyek/perusahaan.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-5">
+                    <span class="text-amber-600 font-bold text-sm uppercase tracking-wider">Profil Perusahaan</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                        Membangun Kepercayaan Melalui Ketepatan & Kualitas Material
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        <strong>CV. INTANAFDAN</strong> bergerak di bidang perdagangan umum bahan bangunan serta penyediaan jasa transportasi angkutan darat dan logistik proyek. Kami hadir menjawab tantangan keterlambatan pengiriman material yang sering menghambat progres pembangunan di lapangan.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Dengan dukungan tim operasional berpengalaman dan unit armada yang terawat rutin, kami memastikan setiap pesanan tiba sesuai jadwal, spesifikasi, dan volume yang disepakati.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-3">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <i class="fa-solid fa-check-circle text-amber-500 text-xl mb-2"></i>
+                            <h4 class="font-bold text-navy-900">Pengiriman Hari yang Sama</h4>
+                            <p class="text-xs text-slate-500 mt-1">Untuk pemesanan area dalam kota sebelum pukul 14.00 WIB.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <i class="fa-solid fa-route text-amber-500 text-xl mb-2"></i>
+                            <h4 class="font-bold text-navy-900">Jasa Angkut Carter / Ritase</h4>
+                            <p class="text-xs text-slate-500 mt-1">Melayani angkutan pindahan barang proyek, alat berat ringan, dan puing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alur Pemesanan -->
+                <div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-xl font-bold mb-6 text-amber-400">Alur Pemesanan Mudah</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold">Pilih Material & Jenis Armada</h4>
+                                <p class="text-sm text-slate-400 mt-1">Tentukan jenis bahan bangunan serta kapasitas truk sesuai akses jalan lokasi proyek.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold">Hitung Estimasi & Kirim ke WhatsApp</h4>
+                                <p class="text-sm text-slate-400 mt-1">Gunakan kalkulator estimasi di bawah ini untuk mendapatkan rincian harga otomatis.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 text-navy-950 font-extrabold flex items-center justify-center shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold">Konfirmasi Jadwal & Bongkar Muat</h4>
+                                <p class="text-sm text-slate-400 mt-1">Tim kami segera memproses surat jalan dan mengirimkan pesanan ke titik tujuan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Bahan Bangunan -->
+    <section id="katalog" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-600 font-bold text-sm uppercase tracking-wider">Katalog Produk</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Daftar Bahan Bangunan</h2>
+                <p class="text-slate-600 mt-3">Pilih kebutuhan material proyek Anda. Klik tombol <strong>+ Pilih</strong> untuk langsung memasukkannya ke kalkulator estimasi biaya.</p>
+            </div>
+
+            <!-- Filter & Search Controls -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <div id="category-filters" class="flex flex-wrap justify-center gap-2">
+                    <button data-category="all" class="filter-btn active px-4 py-2 rounded-xl text-sm font-bold transition-all bg-navy-900 text-white">Semua</button>
+                    <button data-category="alam" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:border-amber-500">Material Alam</button>
+                    <button data-category="struktur" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:border-amber-500">Semen & Struktur</button>
+                    <button data-category="besi" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:border-amber-500">Besi & Baja</button>
+                    <button data-category="dinding" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:border-amber-500">Dinding & Atap</button>
+                </div>
+
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" id="search-material" placeholder="Cari pasir, semen, besi..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20">
+                </div>
+            </div>
+
+            <!-- Material Grid (Di-render via JS) -->
+            <div id="material-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cards injected by assets/js/app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Armada Angkutan -->
+    <section id="armada" class="py-20 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-amber-400 font-bold text-sm uppercase tracking-wider">Layanan Logistik & Angkutan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Pilihan Armada Angkutan</h2>
+                <p class="text-slate-300 mt-3">Melayani pengiriman material maupun carter angkutan barang/puing proyek sesuai kapasitas muatan dan lebar akses jalan.</p>
+            </div>
+
+            <div id="fleet-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fleet cards injected by assets/js/app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Estimasi & Pemesanan WhatsApp -->
+    <section id="kalkulator" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+                    <div>
+                        <span class="text-amber-600 font-bold text-xs uppercase tracking-wider">Simulasi Biaya Proyek</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Kalkulator Estimasi & Order Cepat</h2>
+                    </div>
+                    <button id="reset-calc-btn" class="text-sm text-slate-500 hover:text-red-600 font-semibold flex items-center gap-1.5 self-start sm:self-center">
+                        <i class="fa-solid fa-rotate-left"></i> Reset Pilihan
+                    </button>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 mt-8">
+                    <!-- Form Input -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div>
+                            <label for="calc-material" class="block text-sm font-bold text-navy-900 mb-2">1. Pilih Bahan Bangunan (Opsional jika hanya jasa angkut)</label>
+                            <select id="calc-material" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
+                                <option value="">-- Hanya Jasa Angkutan (Tanpa Beli Material) --</option>
+                            </select>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="calc-qty" class="block text-sm font-bold text-navy-900 mb-2">2. Jumlah / Volume Material</label>
+                                <input type="number" id="calc-qty" min="0" value="1" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="calc-fleet" class="block text-sm font-bold text-navy-900 mb-2">3. Pilih Armada Angkutan</label>
+                                <select id="calc-fleet" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm font-medium focus:outline-none focus:border-amber-500">
+                                    <!-- Options injected by JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="customer-name" class="block text-sm font-bold text-navy-900 mb-2">Nama Pemesan / Proyek</label>
+                                <input type="text" id="customer-name" placeholder="Contoh: Bpk. Ahmad / Proyek Ruko" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="customer-address" class="block text-sm font-bold text-navy-900 mb-2">Alamat Tujuan Pengiriman</label>
+                                <input type="text" id="customer-address" placeholder="Kecamatan / Patokan Lokasi" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Panel -->
+                    <div class="lg:col-span-5 bg-navy-900 text-white rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-amber-400 border-b border-slate-800 pb-3 mb-4">Rincian Estimasi Biaya</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Item Material:</span>
+                                    <span id="summary-material-name" class="font-semibold text-right">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Subtotal Material:</span>
+                                    <span id="summary-material-cost" class="font-semibold">Rp 0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Armada (<span id="summary-fleet-name">-</span>):</span>
+                                    <span id="summary-fleet-cost" class="font-semibold">Rp 0</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between items-baseline">
+                                <span class="text-slate-300 font-semibold">Estimasi Total:</span>
+                                <span id="summary-total" class="text-2xl font-extrabold text-amber-400">Rp 0</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-2">*Harga estimasi dapat disesuaikan berdasarkan jarak tempuh akhir dan kondisi bongkar muat.</p>
+                        </div>
+
+                        <button id="whatsapp-order-btn" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-extrabold py-3.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-slate-400 py-14 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-navy-950 font-extrabold text-lg">
+                            <i class="fa-solid fa-truck-moving"></i>
+                        </div>
+                        <span class="text-white font-extrabold text-lg">CV. INTANAFDAN</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Solusi pengadaan bahan bangunan lengkap dan jasa angkutan logistik proyek yang amanah, cepat, dan profesional.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Jam Operasional</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Senin – Jumat: 07.30 – 17.00 WIB</li>
+                        <li>Sabtu: 07.30 – 15.00 WIB</li>
+                        <li>Minggu / Hari Libur: Sesuai Perjanjian Proyek</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kontak & Depo Material</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jl. Raya Industri & Konstruksi No. 88</li>
+                        <li><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +62 812-3456-7890</li>
+                        <li><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> admin@cvintanafdan.co.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-xs text-slate-500">
+                &copy; <span id="current-year"></span> CV. INTANAFDAN. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20CV.%20INTANAFDAN,%20saya%20ingin%20bertanya%20mengenai%20bahan%20bangunan%20dan%20jasa%20angkutan." target="_blank" rel="noopener noreferrer" aria-label="Hubungi WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-navy-950 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom JavaScript Terpisah -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
