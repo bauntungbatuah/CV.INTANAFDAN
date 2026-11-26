@@ -1,0 +1,85 @@
+/* =========================================================
+   CV. INTANAFDAN - Custom Stylesheet (assets/css/style.css)
+   ========================================================= */
+
+:root {
+    --navy-950: #090d16;
+    --navy-900: #0f172a;
+    --amber-500: #f59e0b;
+    --amber-400: #fbbf24;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+/* Hero Background Grid Pattern */
+.hero-grid-pattern {
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Card Hover Elevation */
+.material-card,
+.fleet-card {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px -8px rgba(15, 23, 42, 0.12);
+    border-color: var(--amber-500);
+}
+
+.fleet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -8px rgba(245, 158, 11, 0.15);
+    border-color: var(--amber-400);
+}
+
+/* Active Nav Link Indicator */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--amber-400);
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+    background-color: var(--navy-900);
+    color: #ffffff;
+    border-color: var(--navy-900);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
