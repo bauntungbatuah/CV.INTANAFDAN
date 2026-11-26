@@ -1,249 +1,365 @@
-/* ========== VARIABEL WARNA SESUAI LOGO ========== */
+/* ============================================
+   CV. INTAN AFDAN — Glass Dark Theme
+============================================ */
+
 :root {
-  --biru-utama: #0052CC;
-  --biru-terang: #1E76F0;
-  --biru-gelap: #003D99;
+  /* Warna Utama */
+  --hitam-utama: #0F0F12;
+  --hitam-kaca: rgba(26, 26, 34, 0.65);
+  --biru: #0052CC;
+  --biru-terang: #2B7DF9;
+  --kuning: #FFB900;
+  --kuning-terang: #FFCF4D;
   --putih: #FFFFFF;
-  --abu-terang: #F5F8FF;
-  --bayangan: rgba(0, 82, 204, 0.15);
+  --abu: #9CA3AF;
+  --batas-kaca: rgba(255, 255, 255, 0.06);
+  --bayangan-dalam: rgba(0, 0, 0, 0.35);
 }
 
-/* ========== RESET DASAR ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #E6F0FF 0%, #CCE0FF 50%, #E6F0FF 100%);
+  background: 
+    radial-gradient(circle at top left, rgba(0, 82, 204, 0.08), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255, 185, 0, 0.06), transparent 40%),
+    linear-gradient(180deg, #0F0F12 0%, #18181F 100%);
   min-height: 100vh;
-  color: var(--biru-gelap);
+  color: var(--putih);
+  line-height: 1.6;
 }
 
-/* ========== EFEK KACA UTAMA ========== */
+/* ============== EFEK KACA UTAMA ============== */
 .kaca {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--hitam-kaca);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-radius: 20px;
-  border: 1px solid rgba(0, 82, 204, 0.15);
+  border: 1px solid var(--batas-kaca);
   box-shadow: 
-    0 8px 32px var(--bayangan),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    0 8px 32px var(--bayangan-dalam),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .kaca-tebal {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(26, 26, 34, 0.8);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
   border-radius: 24px;
-  border: 1px solid rgba(0, 82, 204, 0.2);
+  border: 1px solid rgba(255, 185, 0, 0.1);
   box-shadow: 
-    0 12px 48px var(--bayangan),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.kaca-biru {
-  background: rgba(0, 82, 204, 0.12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  border: 1px solid rgba(0, 82, 204, 0.25);
-  box-shadow: 
-    0 6px 24px rgba(0, 82, 204, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+.kaca-batas-kuning {
+  border-color: rgba(255, 185, 0, 0.18);
 }
 
-/* ========== NAVBAR KACA ========== */
+/* ============== NAVBAR ============== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 16px 40px;
+  padding: 14px 24px;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(15, 15, 18, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 82, 204, 0.1);
+  border-bottom: 1px solid var(--batas-kaca);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo-text {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--biru-utama);
-  letter-spacing: 1px;
-}
-
-.nav-link {
+.logo-brand {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 12px;
 }
 
-.nav-link a {
-  color: var(--biru-gelap);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-link a:hover {
-  color: var(--biru-utama);
-}
-
-.nav-link a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--biru-utama);
-  transition: width 0.3s ease;
-}
-
-.nav-link a:hover::after {
-  width: 100%;
-}
-
-/* ========== TOMBOL KACA ========== */
-.btn-kaca {
-  padding: 12px 28px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 82, 204, 0.3);
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  color: var(--biru-utama);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-kaca:hover {
-  background: rgba(0, 82, 204, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 82, 204, 0.15);
-}
-
-.btn-kaca-utama {
-  padding: 12px 28px;
-  border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, var(--biru-utama), var(--biru-terang));
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 82, 204, 0.35);
-  transition: all 0.3s ease;
-}
-
-.btn-kaca-utama:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.4);
-}
-
-/* ========== KARTU LAYANAN KACA ========== */
-.grid-layanan {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  padding: 20px;
-}
-
-.kartu-kaca {
-  padding: 32px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 82, 204, 0.12);
-  transition: all 0.4s ease;
-}
-
-.kartu-kaca:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(0, 82, 204, 0.25);
-  box-shadow: 0 16px 40px rgba(0, 82, 204, 0.18);
-}
-
-.kartu-kaca h3 {
-  color: var(--biru-utama);
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--biru), var(--biru-terang));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
   font-size: 22px;
-  margin-bottom: 12px;
+  color: white;
 }
 
-.kartu-kaca p {
-  color: #4466AA;
-  line-height: 1.7;
+.logo-text h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* ========== BAGIAN HEADER UTAMA ========== */
+.logo-text p {
+  font-size: 11px;
+  color: var(--kuning);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid var(--batas-kaca);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ============== HERO SECTION ============== */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-  padding-top: 100px;
+  padding: 120px 24px 80px;
+  max-width: 620px;
 }
 
-.hero-kaca {
-  padding: 60px 80px;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(24px);
-  border-radius: 28px;
-  border: 1px solid rgba(0, 82, 204, 0.15);
-  box-shadow: 0 16px 56px rgba(0, 82, 204, 0.12);
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 185, 0, 0.08);
+  border: 1px solid rgba(255, 185, 0, 0.15);
+  border-radius: 100px;
+  font-size: 13px;
+  color: var(--kuning-terang);
+  margin-bottom: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.badge span.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--kuning);
+  border-radius: 50%;
+  animation: kedip 2s infinite;
+}
+
+@keyframes kedip {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .hero h1 {
-  font-size: 48px;
-  color: var(--biru-utama);
-  margin-bottom: 16px;
+  font-size: clamp(36px, 9vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--kuning), var(--kuning-terang));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero p {
-  font-size: 18px;
-  color: #4466AA;
-  max-width: 600px;
-  margin-bottom: 32px;
+  font-size: 17px;
+  color: var(--abu);
+  margin-bottom: 40px;
   line-height: 1.8;
 }
 
-/* ========== FOOTER KACA ========== */
-.footer-kaca {
-  margin-top: 80px;
-  padding: 40px 60px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(0, 82, 204, 0.1);
+/* ============== TOMBOL ============== */
+.tombol-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn-utama {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--kuning), #E5A600);
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 
+    0 4px 20px rgba(255, 185, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-utama:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 
+    0 10px 30px rgba(255, 185, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-kaca {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--batas-kaca);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-kaca:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ============== KARTU LAYANAN ============== */
+.section {
+  padding: 60px 24px;
+}
+
+.section-title {
   text-align: center;
-  color: #5577BB;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
-/* ========== ANIMASI ========== */
-@keyframes melayang {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.section-title span {
+  color: var(--kuning);
 }
 
-.animasi-layang {
-  animation: melayang 4s ease-in-out infinite;
+.grid-layanan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-@keyframes muncul {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.kartu {
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(26, 26, 34, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--batas-kaca);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.kartu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--kuning), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.kartu:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 185, 0, 0.15);
+  background: rgba(26, 26, 34, 0.7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.kartu:hover::before {
+  opacity: 1;
+}
+
+.kartu h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  color: white;
+}
+
+.kartu h3 span {
+  color: var(--kuning);
+}
+
+.kartu p {
+  color: var(--abu);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.icon-kartu {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.2), rgba(0, 82, 204, 0.05));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* ============== FOOTER ============== */
+.footer {
+  padding: 40px 24px;
+  text-align: center;
+  border-top: 1px solid var(--batas-kaca);
+  color: var(--abu);
+  font-size: 14px;
+}
+
+/* ============== ANIMASI ============== */
+@keyframes munculBawah {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .muncul {
-  animation: muncul 0.8s ease forwards;
+  animation: munculBawah 0.8s ease forwards;
 }
+
+.tunda-1 { animation-delay: 0.1s; }
+.tunda-2 { animation-delay: 0.2s; }
+.tunda-3 { animation-delay: 0.3s; }
